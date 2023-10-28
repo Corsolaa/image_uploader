@@ -15,6 +15,11 @@
 <body>
 
 <h1>Welcome handsome</h1>
+<form class="upload_image" action="upload.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload" accept=".webp, .png, .jpeg, .gif">
+    <input type="submit" value="Upload Image" name="submit">
+</form>
 
 <script src="script.js"></script>
 </body>
