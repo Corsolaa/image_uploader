@@ -17,7 +17,8 @@
 <h1>Welcome handsome</h1>
 <form class="upload_image" action="upload.php" method="post" enctype="multipart/form-data">
     Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload" accept=".webp, .png, .jpeg, .gif">
+    <input type="file" name="fileToUpload" class="image_input" accept=".webp, .png, .jpeg, .gif">
+    <img class="image_demo" src="" alt="Upload demo">
     <input type="submit" value="Upload Image" name="submit">
 </form>
 
