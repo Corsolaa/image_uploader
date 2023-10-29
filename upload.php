@@ -1,32 +1,32 @@
 <?php
-function getCounterDigit() {
-    // Read the JSON file.
-    $json = file_get_contents("uploaded/dex.json");
-    $jsonData = json_decode($json, true);
+if(isset($_POST["submit"]) && $_FILES["fileToUpload"]["size"] != 0) {
+    function getCounterDigit() {
+        // Read the JSON file.
+        $json = file_get_contents("uploaded/dex.json");
+        $jsonData = json_decode($json, true);
 
-    $data["counter"] = $jsonData["counter"] + 1;
+        $data["counter"] = $jsonData["counter"] + 1;
 
-    // Write the JSON file.
-    $newJsonString = json_encode($data);
-    file_put_contents('uploaded/dex.json', $newJsonString);
+        // Write the JSON file.
+        $newJsonString = json_encode($data);
+        file_put_contents('uploaded/dex.json', $newJsonString);
 
-    return $jsonData["counter"];
-}
+        return $jsonData["counter"];
+    }
 
-function getFileExtension($file_name): string
-{
-    return "." . substr(strrchr($file_name,'.'),1);
-}
+    function getFileExtension($file_name): string
+    {
+        return "." . substr(strrchr($file_name,'.'),1);
+    }
 
-function allowedImages($extension): bool
-{
-    return match ($extension) {
-        "image/png", "image/gif", "image/webp", "image/jpeg" => true,
-        default => false,
-    };
-}
+    function allowedImages($extension): bool
+    {
+        return match ($extension) {
+            "image/png", "image/gif", "image/webp", "image/jpeg" => true,
+            default => false,
+        };
+    }
 
-if(isset($_POST["submit"])) {
     $targetDir = "uploaded/";
     $fileInfo = $_FILES["fileToUpload"];
     $check = getimagesize($fileInfo["tmp_name"]);
@@ -57,4 +57,6 @@ if(isset($_POST["submit"])) {
         header("Location: index.php?error=unknown");
     }
     die();
+} else {
+    header("Location: index.php");
 }
