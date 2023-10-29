@@ -33,19 +33,19 @@ if(isset($_POST["submit"])) {
 
     // Check if the image is an actual image.
     if (!$check) {
-        echo "Only supported images are allowed";
+        header("Location: index.php?error=not_image");
         die();
     }
 
     // Check if image is over 16MB.
     if ($fileInfo["size"] > 16000000) {
-        echo "File is to large for upload.";
+        header("Location: index.php?error=file_large");
         die();
     }
 
     // Check if image extension is allowed.
     if (!allowedImages($check['mime'])) {
-        echo "This image extension is not supported";
+        header("Location: index.php?error=not_image");
         die();
     }
 
@@ -54,7 +54,7 @@ if(isset($_POST["submit"])) {
     if (move_uploaded_file($fileInfo["tmp_name"], $target_file)) {
         header("Location: index.php?done");
     } else {
-        echo "Sorry, there was an error uploading your file.";
+        header("Location: index.php?error=unknown");
     }
     die();
 }
