@@ -42,6 +42,7 @@ summary,
 }
 
 main {
+    display: flex;
     height: 100vh;
 }
 
@@ -49,18 +50,26 @@ main {
     display: none;
 }
 
+.sidebar_image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
 .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: 100%;
+    width: 100%;
     text-align: center;
     padding: 5px;
 }
 
 .content h1 {
     font-size: 2rem;
-    padding-bottom: 15px;
 }
 
 .image_label {
@@ -70,6 +79,16 @@ main {
 
 .image_input {
     display: none;
+}
+
+.image_demo {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.expand {
+    max-height: 100%;
 }
 
 .upload_image {
@@ -86,4 +105,23 @@ main {
     border-radius: 15px;
     background: var(--background);
     color: var(--purple);
+}
+
+@media only screen and (min-width: 360px) {
+    .upload_image {
+        width: 350px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .content {
+        width: fit-content;
+        margin-left: 50px;
+    }
+
+    .sidebar_image {
+        display: block;
+        width: 450px;
+        height: 100vh;
+    }
 }

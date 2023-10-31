@@ -31,8 +31,8 @@ if ($_GET["error"]) {
     </section>
 
     <section class="content">
-        <h1>Upload image here</h1>
         <form class="upload_image" action="upload.php" method="post" enctype="multipart/form-data">
+            <h1>Upload image here</h1>
             <label for="fileToUpload" class="image_label">
                 <span>Click here to upload image</span>
                 <input type="file" name="fileToUpload" class="image_input" id="fileToUpload"
