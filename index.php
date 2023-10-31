@@ -31,6 +31,7 @@ if ($_GET["error"]) {
     </section>
 
     <section class="content">
+        <div class="circle_overflow"></div>
         <form class="upload_image" action="upload.php" method="post" enctype="multipart/form-data">
             <h1>Upload image here</h1>
             <label for="fileToUpload" class="image_label">

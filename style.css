@@ -57,10 +57,13 @@ main {
     object-position: 20%;
 }
 
+.circle_overflow {
+    position: absolute;
+    display: none;
+}
 
 .content {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -97,6 +100,7 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 25px;
+    z-index: 1;
 }
 
 .upload_image [type=submit] {
@@ -115,14 +119,27 @@ main {
 }
 
 @media screen and (min-width: 800px) {
-    .content {
-        width: fit-content;
-        margin-left: 50px;
-    }
-
     .sidebar_image {
         display: block;
-        width: 450px;
+        width: 800px;
         height: 100vh;
+    }
+
+    .circle_overflow {
+        display: flex;
+        width: 250px;
+        height: 110vh;
+
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        left: 0;
+        background: white;
+        transform: translateX(-50%);
+    }
+
+    .content {
+        width: fit-content;
+        position: relative;
+        margin-right: 50px;
     }
 }
