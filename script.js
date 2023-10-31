@@ -1,5 +1,4 @@
 const image_input = document.querySelector(".image_input");
-const image_label = document.querySelector(".image_label");
 const image_demo = document.querySelector(".image_demo");
 
 image_input.addEventListener("change", () => {
