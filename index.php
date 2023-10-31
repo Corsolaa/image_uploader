@@ -25,16 +25,28 @@ if ($_GET["error"]) {
 </head>
 <body>
 
-<h1>Welcome handsome</h1>
-<form class="upload_image" action="upload.php" method="post" enctype="multipart/form-data">
-    Select image to upload:
-    <input type="file" name="fileToUpload" class="image_input" accept=".webp, .png, .jpeg, .gif">
-    <img class="image_demo" src="" alt="Upload demo">
-    <?php if (isset($error_message)) { ?>
-        <p class="error_message"><?php echo $error_message ?></p>
-    <?php } ?>
-    <input type="submit" value="Upload Image" name="submit">
-</form>
+<main>
+    <section class="sidebar_image">
+        <img src="https://www.brunobouwman.nl/images/animals_draw.webp" alt="sidebar background">
+    </section>
+
+    <section class="content">
+        <div class="circle_overflow"></div>
+        <form class="upload_image" action="upload.php" method="post" enctype="multipart/form-data">
+            <h1>Upload image here</h1>
+            <label for="fileToUpload" class="image_label">
+                <span>Click here to upload image</span>
+                <input type="file" name="fileToUpload" class="image_input" id="fileToUpload"
+                       accept=".webp, .png, .jpeg, .gif">
+            </label>
+            <img class="image_demo" src="" alt="Upload demo">
+            <?php if (isset($error_message)) { ?>
+                <p class="error_message"><?php echo $error_message ?></p>
+            <?php } ?>
+            <input type="submit" value="Upload Image" name="submit">
+        </form>
+    </section>
+</main>
 
 <script src="script.js"></script>
 </body>
