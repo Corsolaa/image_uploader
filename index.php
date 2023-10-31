@@ -27,7 +27,7 @@ if ($_GET["error"]) {
 
 <main>
     <section class="sidebar_image">
-        <img src="https://www.brunobouwman.nl/images/animalkingdom.webp" alt="sidebar background">
+        <img src="https://www.brunobouwman.nl/images/animals_draw.webp" alt="sidebar background">
     </section>
 
     <section class="content">
