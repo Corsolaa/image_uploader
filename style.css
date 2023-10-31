@@ -64,6 +64,7 @@ main {
 
 .content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -86,13 +87,14 @@ main {
 }
 
 .image_demo {
-    max-height: 0;
+    opacity: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    transition: opacity 0.3s ease-out;
+    border-radius: 15px;
 }
 
-.expand {
-    max-height: 100%;
+.visible {
+    opacity: 1;
 }
 
 .upload_image {
