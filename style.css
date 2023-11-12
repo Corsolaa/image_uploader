@@ -89,6 +89,7 @@ main {
 .image_demo {
     opacity: 0;
     overflow: hidden;
+    max-height: calc(100% - 165px);
     transition: opacity 0.3s ease-out;
     border-radius: 15px;
 }
@@ -100,8 +101,11 @@ main {
 .upload_image {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 25px;
+
+    height: 100%;
     z-index: 1;
 }
 
