@@ -27,7 +27,7 @@ if ($_GET["error"]) {
 
 <main>
     <section class="sidebar_image">
-        <img src="https://www.brunobouwman.nl/images/animals_draw.webp" alt="sidebar background">
+        <img src="https://www.brunobouwman.nl/images/src/animals_draw.webp" alt="sidebar background">
     </section>
 
     <section class="content">
@@ -41,7 +41,7 @@ if ($_GET["error"]) {
             </label>
             <img class="image_demo" src="" alt="Upload demo">
             <?php if (isset($error_message)) { ?>
-                <p class="error_message"><?php echo $error_message ?></p>
+                <p style="color: red" class="error_message"><?php echo $error_message ?></p>
             <?php } ?>
             <input type="submit" value="Upload Image" name="submit">
         </form>
