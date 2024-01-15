@@ -1,44 +1,20 @@
 :root {
-    --text: black;
-    --background: white;
     --purple: #5741e7;
+    --light-purple: #6c5be1;
 }
 
-/* Removes all the stupid things from browser and makes sure everything fits well. */
-*,  *::before, *::after  {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    html {
-        scroll-behavior: smooth;
-    }
+.stripe_background {
+    background: repeating-linear-gradient(
+            45deg,
+            var(--light-purple),
+            var(--light-purple) 10px,
+            var(--purple) 10px,
+            var(--purple) 20px
+    );
 }
 
 body {
-    min-height: 100vh;
-    color: var(--text);
-    font-family: sans-serif;
-    background: var(--background);
-}
-
-/* Makes sure that images always fit and are visible. */
-img, picture, svg, video {
-    display: block;
-    max-width: 100%;
-}
-
-/* Makes sure that all clickable have a pointer cursor. */
-label,
-button,
-select,
-summary,
-[type=radio],
-[type=submit],
-[type=checkbox] {
-    cursor: pointer;
+    overflow: hidden;
 }
 
 main {
@@ -48,13 +24,13 @@ main {
 
 .sidebar_image {
     display: none;
-}
 
-.sidebar_image img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 20%;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 20%;
+    }
 }
 
 .circle_overflow {
@@ -71,15 +47,65 @@ main {
     width: 100%;
     text-align: center;
     padding: 5px;
-}
-
-.content h1 {
-    font-size: 2rem;
+     h1 {
+         font-size: 2rem;
+     }
 }
 
 .image_label {
     cursor: pointer;
+
+    border-radius: 15px;
+    padding: 50px 75px;
+
+    color: white;
+    font-weight: bold;
     font-size: 1.2rem;
+}
+
+.queue {
+    width: 100%;
+    max-width: 394px;
+    max-height: 100%;
+
+    overflow: scroll;
+
+    border: 3px solid var(--purple);
+    border-radius: 15px;
+
+    .image_wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        padding: 15px;
+        height: 110px;
+
+        border-bottom: 1px solid var(--purple);
+    }
+
+    .image_wrapper:last-child {
+        border: none;
+    }
+}
+
+.error {
+    display: flex;
+    align-items: center;
+    font-size: 35px;
+}
+
+.remove {
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+
+    background: rgb(255,0,0);
+    background: linear-gradient(50deg, rgba(255,0,0,1) 0%, rgba(255,139,0,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .image_input {
@@ -105,26 +131,28 @@ main {
     align-items: center;
     gap: 25px;
 
+    width: 100%;
+
     height: 100%;
     z-index: 1;
-}
 
-.upload_image [type=submit] {
-    font-size: 1.4rem;
-    padding: 5px 10px;
-    border: 2px solid var(--purple);
-    border-radius: 15px;
-    background: var(--background);
-    color: var(--purple);
-}
+    padding-bottom: 25px;
+    padding-top: 25px;
 
-@media only screen and (min-width: 360px) {
-    .upload_image {
-        width: 350px;
+    [type=submit] {
+        font-size: 1.4rem;
+        padding: 5px 10px;
+        border-radius: 15px;
+        border: none;
+        color: white;
     }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 600px) {
+    .upload_image {
+        width: 600px;
+    }
+
     .sidebar_image {
         display: block;
         width: 800px;
@@ -139,13 +167,12 @@ main {
         border-top-left-radius: 50%;
         border-bottom-left-radius: 50%;
         left: 0;
-        background: white;
+        background: var(--background);
         transform: translateX(-50%);
     }
 
     .content {
         width: fit-content;
         position: relative;
-        margin-right: 50px;
     }
 }

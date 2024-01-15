@@ -21,6 +21,7 @@ if ($_GET["error"]) {
     <title>Image uploader</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.brunobouwman.nl/standard.css">
     <link rel="icon" href="icon.ico">
 </head>
 <body>
@@ -33,21 +34,76 @@ if ($_GET["error"]) {
     <section class="content">
         <div class="circle_overflow"></div>
         <form class="upload_image" action="upload.php" method="post" enctype="multipart/form-data">
-            <h1>Upload image here</h1>
-            <label for="fileToUpload" class="image_label">
+            <h1>Upload images here</h1>
+            <label for="fileToUpload" class="image_label stripe_background">
                 <span>Click here to upload image</span>
                 <input type="file" name="fileToUpload" class="image_input" id="fileToUpload"
-                       accept=".webp, .png, .jpeg, .gif">
+                       accept=".webp, .png, .jpeg, .gif" multiple>
             </label>
-            <img class="image_demo" src="" alt="Upload demo">
-            <?php if (isset($error_message)) { ?>
-                <p style="color: red" class="error_message"><?php echo $error_message ?></p>
-            <?php } ?>
-            <input type="submit" value="Upload Image" name="submit">
+
+            <div class="queue">
+                <div class="image_wrapper">
+                    <img src="https://www.brunobouwman.nl/images/src/animals_draw.webp" alt="">
+                    <div class="error">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="remove">
+                        remove
+                    </div>
+                </div>
+                <div class="image_wrapper">
+                    <img src="https://www.brunobouwman.nl/images/src/animals_draw.webp" alt="">
+                    <div class="error">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="remove">
+                        remove
+                    </div>
+                </div>
+                <div class="image_wrapper">
+                    <img src="https://www.brunobouwman.nl/images/src/animals_draw.webp" alt="">
+                    <div class="error">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="remove">
+                        remove
+                    </div>
+                </div><div class="image_wrapper">
+                    <img src="https://www.brunobouwman.nl/images/src/animals_draw.webp" alt="">
+                    <div class="error">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="remove">
+                        remove
+                    </div>
+                </div><div class="image_wrapper">
+                    <img src="https://www.brunobouwman.nl/images/src/animals_draw.webp" alt="">
+                    <div class="error">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="remove">
+                        remove
+                    </div>
+                </div><div class="image_wrapper">
+                    <img src="https://www.brunobouwman.nl/images/src/animals_draw.webp" alt="">
+                    <div class="error">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="remove">
+                        remove
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <input class="stripe_background" type="submit" value="Upload Images" name="submit">
         </form>
     </section>
 </main>
 
+<script src="https://kit.fontawesome.com/947c4c8fa0.js" crossorigin="anonymous"></script>
 <script src="script.js"></script>
 </body>
 </html>
