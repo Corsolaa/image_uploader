@@ -1,19 +1,25 @@
+const queue = document.querySelector(".queue");
 const image_input = document.querySelector(".image_input");
-const image_demo = document.querySelector(".image_demo");
-let remember;
+const remove_buttons = queue.querySelectorAll(".remove");
 
-image_input.addEventListener("change", () => {
-    if (image_input.files.length !== 0) {
-        image_demo.classList.remove("visible");
+const returnHandlers = [
+    done = "<i class=\"fa-solid fa-square-check\"></i>",
+    error = "<i class=\"fa-solid fa-triangle-exclamation\"></i>"
+]
+
+image_input.addEventListener("change", addUpload);
+
+function addUpload() {
+    if (image_input.files.length < 1) {
+        queue.classList.add("hidden");
+        return;
     }
-    setTimeout(() => {
-        const [file] = image_input.files;
-        remember = image_input.files;
-        if (file) {
-            image_demo.src = URL.createObjectURL(file);
-            setTimeout(() => {
-                image_demo.classList.add("visible");
-            }, 100);
-        }
-    }, 300);
-});
+
+    Array.from(image_input.files).forEach((image_obj) => {
+        const demo_obj = URL.createObjectURL(image_obj);
+    });
+}
+
+function removeQueueItem() {
+
+}

@@ -13,6 +13,10 @@
     );
 }
 
+.hidden {
+    display: none;
+}
+
 body {
     overflow: hidden;
 }
@@ -81,6 +85,10 @@ main {
         height: 110px;
 
         border-bottom: 1px solid var(--purple);
+
+        img {
+            border-radius: 5px;
+        }
     }
 
     .image_wrapper:last-child {
@@ -141,10 +149,11 @@ main {
 
     [type=submit] {
         font-size: 1.4rem;
-        padding: 5px 10px;
+        color: white;
+
+        padding: 10px 25px;
         border-radius: 15px;
         border: none;
-        color: white;
     }
 }
 

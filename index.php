@@ -68,23 +68,8 @@ if ($_GET["error"]) {
                     <div class="remove">
                         remove
                     </div>
-                </div><div class="image_wrapper">
-                    <img src="https://www.brunobouwman.nl/images/src/animals_draw.webp" alt="">
-                    <div class="error">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                    </div>
-                    <div class="remove">
-                        remove
-                    </div>
-                </div><div class="image_wrapper">
-                    <img src="https://www.brunobouwman.nl/images/src/animals_draw.webp" alt="">
-                    <div class="error">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                    </div>
-                    <div class="remove">
-                        remove
-                    </div>
-                </div><div class="image_wrapper">
+                </div>
+                <div class="image_wrapper">
                     <img src="https://www.brunobouwman.nl/images/src/animals_draw.webp" alt="">
                     <div class="error">
                         <i class="fa-solid fa-triangle-exclamation"></i>
@@ -93,11 +78,7 @@ if ($_GET["error"]) {
                         remove
                     </div>
                 </div>
-
-
-
             </div>
-
             <input class="stripe_background" type="submit" value="Upload Images" name="submit">
         </form>
     </section>
